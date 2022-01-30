@@ -1,0 +1,39 @@
+Experiment_name: LwGCN_NW-UCLA_bone_motion_contrast_tiny
+
+# feeder
+feeder: feeders.NWUCLA_feeder.Feeder
+train_feeder_args:
+  data_path: bone motion
+  label_path: train
+  debug: False
+  random_choose: True
+  random_shift: False
+  random_move: False
+  window_size: 52
+  normalization: False
+
+test_feeder_args:
+  data_path: bone motion
+  label_path: val
+# model
+model: model.lw_gcn_nwucla.Model
+model_args:
+  num_class: 10
+  num_point: 20
+  num_person: 1
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [60, 80, 100]
+
+# training
+device: [0]
+only_train_epoch: 1
+batch_size: 16
+test_batch_size: 64
+num_epoch: 140
+nesterov: True
