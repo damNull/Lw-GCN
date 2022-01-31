@@ -4,6 +4,8 @@ The command for evaluate models.
 
 Unzip the files from `https://drive.google.com/file/d/1EwAZWIPSpX2WTYVBwvEoebp0nLBRYbaY/view?usp=sharing` into `evaluations/` directory for model evaluations.
 
+The calculation complexity of our single stream model is less than 1 GFLOPs which is suitable for edge / mobile device.
+
 ## Ablation study
 
 ### Shift-GCN baseline
@@ -16,6 +18,8 @@ Name|Top1(%)
 Shift-GCN|87.73
 
 ### Shift-GCN tiny model with Shift-GCN distillation (using KD)
+
+The training time of distilled tiny Shift-GCN model is ~2.5x than directly training Lw-GCN.
 
 `python eval.py --test-dir ./evaluations/NTU-RGBD/ablation_study/Shift-GCN_Shift-GCN-S`
 
