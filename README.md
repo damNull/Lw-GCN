@@ -1,5 +1,5 @@
 # Lw-GCN
-The test code of Lw-GCN
+The test code of Lw-GCN (Old-version)
 
 ## Prerequisite
 
